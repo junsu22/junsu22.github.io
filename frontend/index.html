@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Devfolio Log</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* 인덱스 전용 간단한 스타일 추가 */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #28357e;
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    }
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: #c5cae9;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 1.5rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: rgb(253, 0, 0);
+    }
+    main {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+      text-align: center;
+    }
+    main h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #3f51b5;
+    }
+    main p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgb(0 0 0 / 0.15);
+      margin-bottom: 2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      background-color: #f0f4f8;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1.5rem 1.5rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Devfolio Log</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="guestbook.html">방명록</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>안녕하세요, 김준수입니다.</h2>
+    <p>작업 중입니다.</p>
+    <img
+      src="https://images.unsplash.com/photo-1752643719443-991766cceb24?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="대문사진"
+      class="hero-image"
+    />
+  </main>
+
+  <footer>&copy; 2025 junsu,Kim Devfolio Log</footer>
+</body>
+
+</html>

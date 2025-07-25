@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #1f1c2c, #928dab);
+    color: white;
+
+}
+header {
+    background: #00000088;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a, header a{
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4e54c8;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
