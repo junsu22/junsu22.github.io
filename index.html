@@ -1,128 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Devfolio Log</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>김준수 | Design × Data × Web</title>
+  <meta name="description" content="디자인 감각과 데이터 관리 경험을 겸비한 웹 실무형 인재, 김준수의 포트폴리오입니다." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* 인덱스 전용 간단한 스타일 추가 */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    :root{
+      --bg: #0b0c10;
+      --card:#12141a;
+      --muted:#a6adbb;
+      --text:#e9eef6;
+      --primary:#7aa2f7;
+      --accent:#34d399;
+      --ring: rgba(122,162,247,.35);
     }
-
-    header {
-      background-color: #28357e;
-      color: white;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    @media(prefers-color-scheme:light){
+      :root{--bg:#f7f8fa;--card:#ffffff;--muted:#5b6472;--text:#0f172a;--primary:#3b82f6;--accent:#10b981;--ring:rgba(59,130,246,.2);}  
+      body{background:linear-gradient(180deg,#f8fafc 0,#eef2ff 100%);}    
     }
-
-    header h1 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 1.8rem;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: #c5cae9;
-      text-decoration: none;
-      font-weight: 600;
-      margin-left: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: rgb(253, 0, 0);
-    }
-
-    main {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: white;
-      padding: 2.5rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
-      text-align: center;
-    }
-
-    main h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #3f51b5;
-    }
-
-    main p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-height: 350px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgb(0 0 0 / 0.15);
-      margin-bottom: 2rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      background-color: #f0f4f8;
-      color: #888;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 1.5rem 1.5rem;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav a {
-        margin-left: 0;
-        margin-right: 1rem;
-      }
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Noto Sans KR',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;color:var(--text);background:var(--bg);}
+    a{color:var(--primary);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1040px;margin:0 auto;padding:24px 20px}
+    .nav{position:sticky;top:0;background:rgba(11,12,16,.6);backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid rgba(255,255,255,.06)}
+    @media(prefers-color-scheme:light){.nav{background:rgba(255,255,255,.7);border-bottom:1px solid #e5e7eb}}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .menu{display:flex;gap:18px}
+    .menu a{font-weight:600;opacity:.9}
+    header.hero{padding:80px 0 56px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--ring);border-radius:999px;font-size:13px;color:var(--primary);background:rgba(122,162,247,.06)}
+    h1{font-size:40px;line-height:1.15;margin:14px 0 6px}
+    .subtitle{font-size:18px;color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:14px;border:1px solid transparent;background:var(--primary);color:#fff;font-weight:700}
+    .btn.secondary{background:transparent;border-color:var(--ring);color:var(--text)}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:1fr}
+    @media(min-width:860px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    section{padding:30px 0}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px}
+    @media(prefers-color-scheme:light){.card{border:1px solid #e5e7eb}}
+    h2{font-size:24px;margin:4px 0 16px}
+    .kicker{font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    .list{display:grid;gap:10px;margin:0;padding-left:20px}
+    .pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .project h3{margin:6px 0 8px}
+    .project .meta{font-size:13px;color:var(--muted)}
+    .project .thumb{width:100%;aspect-ratio:16/9;border-radius:14px;object-fit:cover;border:1px solid rgba(255,255,255,.08);background:#0f172a}
+    .exp-item{display:grid;gap:6px;padding:16px;border-radius:14px;border:1px dashed rgba(255,255,255,.14)}
+    .exp-item h3{margin:0}
+    footer{padding:40px 0 60px;color:var(--muted);font-size:14px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
   </style>
 </head>
-
 <body>
-  <header>
-    <h1>Devfolio Log</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="guestbook.html">방명록</a>
-    </nav>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">김준수 · Portfolio</div>
+      <div class="menu" role="navigation" aria-label="주요 메뉴">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <span class="badge">Design × Data × Web</span>
+    <h1>디자인 감각과 데이터 관리 경험을 겸비한 <br/>웹 실무형 인재, 김준수</h1>
+    <p class="subtitle">생활디자인 전공 기반의 시각적 문제해결력과, 산업재산권 DB 프로젝트(2년)에서 축적한 데이터 품질·구조 이해를 결합해 웹콘텐츠와 운영 전반에 기여합니다.</p>
+    <div class="cta">
+      <a class="btn" href="#projects">대표 프로젝트 보기</a>
+      <a class="btn secondary" href="#contact">연락하기</a>
+    </div>
   </header>
 
-  <main>
-    <h2>안녕하세요, 김준수입니다.</h2>
-    <h3>제작기간 2025/07/23 ~ 2025/07/25</h3>
-    <p>배우는 것에 관심이 많습니다.</p>
-     <img
-      src="https://images.unsplash.com/photo-1752643719443-991766cceb24?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      alt="대문사진" class="hero-image" />
+  <main class="container">
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <span class="kicker">About</span>
+      <h2 id="about-title">한 줄 소개</h2>
+      <div class="card">
+        <p>디자인 전공(한밭대학교)과 DW아카데미(웹·콘텐츠) 교육을 바탕으로, <strong>사용자 관점의 시각화</strong>와 <strong>데이터 구조적 사고</strong>를 겸비했습니다. 나라아이넷㈜에서 특허청 산업재산권 <strong>공보·표준문서 DB 구축</strong> 프로젝트를 2년 수행하며 데이터 품질 검수와 시스템 운영을 경험했습니다.</p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-labelledby="projects-title">
+      <span class="kicker">Projects</span>
+      <h2 id="projects-title">대표 프로젝트</h2>
+      <div class="grid grid-3">
+        <article class="project card">
+          <img class="thumb" alt="SLEEP TUNE 프로젝트 썸네일(예시)" src="https://picsum.photos/960/540?random=12" />
+          <h3>SLEEP TUNE – 수면 최적화 베개 브랜드 개발</h3>
+          <p class="meta">개인 브랜딩/디자인 기획 · 2025</p>
+          <p>시장조사 → 타깃 정의 → 컨셉/비주얼 → 홍보콘텐츠까지 <em>전 과정</em>을 구조화. AI 도구를 활용해 전략/시각/영상 산출물을 통합 제작.</p>
+          <p><strong>Tools</strong> · ChatGPT, Midjourney, Photoshop, Illustrator, CapCut, PowerPoint</p>
+          <!-- PPT/PDF 링크가 있으면 아래 href 변경 -->
+          <p><a href="#" aria-disabled="true" title="제출용 링크로 교체">프로젝트 슬라이드(PDF) 준비 중</a></p>
+        </article>
+
+        <article class="project card">
+          <img class="thumb" alt="웹콘텐츠 실습 썸네일(예시)" src="https://picsum.photos/960/540?random=22" />
+          <h3>웹콘텐츠 UI 실습 – DW아카데미</h3>
+          <p class="meta">HTML/CSS/JS · 2022</p>
+          <p>반응형 레이아웃 구성, 컴포넌트화, 간단한 인터랙션 구현. Git으로 버전 관리 및 배포.</p>
+          <p><strong>Stack</strong> · HTML, CSS, JavaScript, GitHub Pages</p>
+          <p><a href="#" aria-disabled="true" title="데모 / 저장소 링크로 교체">데모/레포 링크 추가</a></p>
+        </article>
+
+        <article class="project card">
+          <img class="thumb" alt="데이터 품질 검수 워크플로우(예시)" src="https://picsum.photos/960/540?random=32" />
+          <h3>산업재산권 표준문서 DB 구축 지원</h3>
+          <p class="meta">나라아이넷㈜ · 2022–2024</p>
+          <p>메타데이터 표준화, 데이터 정합성 점검, 발간 시스템 운영 지원. 품질 점검 체크리스트/문서화를 체계화.</p>
+          <p><strong>Role</strong> · 데이터 품질 검수 · 문서화 · 운영 지원</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" aria-labelledby="skills-title">
+      <span class="kicker">Skills</span>
+      <h2 id="skills-title">사용 도구 & 기술</h2>
+      <div class="card">
+        <div style="display:grid;gap:16px;grid-template-columns:1fr;">
+          <div>
+            <h3>Design</h3>
+            <div class="skills">
+              <span class="pill">Photoshop</span>
+              <span class="pill">Illustrator</span>
+              <span class="pill">Midjourney</span>
+            </div>
+          </div>
+          <div>
+            <h3>Web</h3>
+            <div class="skills">
+              <span class="pill">HTML</span>
+              <span class="pill">CSS</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">MySQL</span>
+              <span class="pill">Git/GitHub</span>
+            </div>
+          </div>
+          <div>
+            <h3>Workflow</h3>
+            <div class="skills">
+              <span class="pill">ChatGPT</span>
+              <span class="pill">Notion</span>
+              <span class="pill">PowerPoint</span>
+              <span class="pill">CapCut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-labelledby="exp-title">
+      <span class="kicker">Experience</span>
+      <h2 id="exp-title">경력 요약</h2>
+      <div class="grid" style="grid-template-columns:1fr;gap:14px">
+        <div class="exp-item card">
+          <h3>나라아이넷㈜ · 연구원</h3>
+          <div class="meta">2022.06 – 2024.05 · 특허청 데이터관리센터 (대전)</div>
+          <ul class="list">
+            <li>산업재산권 공보/표준기술문서 DB 구축 지원</li>
+            <li>메타데이터 표준화 · 데이터 정합성 품질 점검</li>
+            <li>발간/운영 프로세스 문서화, 체크리스트 정비</li>
+          </ul>
+        </div>
+        <div class="exp-item card">
+          <h3>해피랜드 코퍼레이션㈜ · 상품관리</h3>
+          <div class="meta">2017.12 – 2019.07 · 서울</div>
+          <ul class="list">
+            <li>상품 입출고 및 재고 관리, 납기 조정 지원</li>
+          </ul>
+        </div>
+        <div class="exp-item card">
+          <h3>㈜해피랜드에프앤씨 · 영업관리</h3>
+          <div class="meta">2016.12 – 2017.12 · 서울</div>
+          <ul class="list">
+            <li>대리점 발주 및 매출 자료 정리, 본사 영업 지원</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <span class="kicker">Contact</span>
+      <h2 id="contact-title">연락처</h2>
+      <div class="card">
+        <p>📧 <a href="mailto:oks****@hanmail.net" title="이메일 보내기">oks****@hanmail.net</a><br/>
+           🔗 GitHub · <a href="https://github.com/junsu22" target="_blank" rel="noopener">github.com/junsu22</a><br/>
+           🌐 Portfolio · <a href="https://junsu22.github.io" target="_blank" rel="noopener">junsu22.github.io</a></p>
+        <p style="font-size:13px;color:var(--muted)">※ 이메일 표기는 스팸 방지를 위해 마스킹했습니다. 실제 배포 시 전체 주소로 교체하세요.</p>
+      </div>
+    </section>
   </main>
 
-  <footer>&copy; 2025 junsu,Kim Devfolio Log</footer>
-</body>
+  <footer class="container">
+    © <span id="y"></span> Junsu Kim. All rights reserved.
+  </footer>
 
+  <script>
+    // 연도 자동 갱신
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // 스무스 스크롤 (접근성 고려하여 기본 anchor 동작 유지)
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          const el=document.querySelector(id);
+          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
+        }
+      });
+    });
+  </script>
+</body>
 </html>
