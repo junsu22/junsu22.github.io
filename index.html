@@ -1,3 +1,5 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>김준수 — AI Engineer</title>
 <meta name="description" content="RAG · 하이브리드 검색 · LLM 평가 시스템을 프로덕션으로 구축하는 AI 엔지니어. E2E 정확도 97.5% 달성, Builders League 최우수상.">
 <meta property="og:title" content="김준수 — AI Engineer">
@@ -92,12 +94,14 @@ nav{
   border-radius:var(--r);
   overflow:hidden;
   margin-bottom:80px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
 }
 .stat{
   padding:20px 24px;
   border-right:1px solid var(--border);
 }
 .stat:last-child{border-right:none;}
+.stat.gold-cell{background:var(--gold-s);}
 .stat-val{
   font-size:30px;font-weight:800;
   letter-spacing:-.03em;color:var(--accent);
@@ -121,6 +125,12 @@ nav{
 .feat{
   border:1px solid var(--border);border-radius:12px;
   overflow:hidden;margin-bottom:12px;
+  box-shadow:0 1px 2px rgba(15,23,42,.04);
+  transition:box-shadow .16s,transform .16s;
+}
+.feat:hover{
+  box-shadow:0 8px 24px rgba(15,23,42,.08);
+  transform:translateY(-2px);
 }
 .feat-top{
   padding:22px 26px 18px;
@@ -195,6 +205,11 @@ nav{
 .award{
   display:flex;align-items:baseline;gap:16px;
   padding:14px 18px;border-radius:var(--r);border:1px solid;
+  transition:box-shadow .16s,transform .16s;
+}
+.award:hover{
+  box-shadow:0 6px 18px rgba(15,23,42,.07);
+  transform:translateY(-1px);
 }
 .award.top{background:var(--gold-s);border-color:var(--gold-b);}
 .award.rest{background:var(--surface);border-color:var(--border);}
@@ -220,7 +235,10 @@ nav{
 .foot-right strong{color:var(--text);}
 
 @media(max-width:620px){
+  .hero{padding-top:48px;}
   .hero h1{font-size:40px;}
+  .hero-links{margin-bottom:48px;}
+  .stat-bar{margin-bottom:56px;}
   .stat-bar{grid-template-columns:1fr 1fr;}
   .stat{border-bottom:1px solid var(--border);}
   .stat:nth-child(2){border-right:none;}
@@ -275,7 +293,7 @@ nav{
         <div class="stat-val">0.75s</div>
         <div class="stat-lbl">TTFT<br>SSE 스트리밍</div>
       </div>
-      <div class="stat">
+      <div class="stat gold-cell">
         <div class="stat-val gold">🏆 3관왕</div>
         <div class="stat-lbl">수상<br>Builders League</div>
       </div>
