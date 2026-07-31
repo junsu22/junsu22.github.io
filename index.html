@@ -375,11 +375,11 @@
           AI 파트는 아키텍처부터 품질 검증까지 단독으로 설계·구현했습니다.
         </p>
         <ul class="impl-list">
-          <li>LangGraph 오케스트레이터 — 8가지 인텐트 분류 후 전문 체인으로 라우팅하는 멀티에이전트 아키텍처 설계·구현</li>
-          <li>BM25 + Vector 하이브리드 검색 — 키워드·의미 검색 결합으로 E2E 정확도 72.5% → 97.5% 달성</li>
+          <li>LangGraph 오케스트레이터 — 인텐트 기반 멀티에이전트 라우팅 아키텍처 설계·구현</li>
+          <li>BM25 + Vector 하이브리드 검색 — E2E 정확도 72.5% → 97.5% 달성</li>
           <li>Prompt Caching 적용 — LLM 비용 54% 절감 (LangSmith 실측)</li>
-          <li>미답변 질문 감지 파이프라인 — is_unanswered 분류 → Slack 자동 알림 → 관리자 대시보드 연동</li>
-          <li>멀티테넌트 문서 격리 — 3개 회사 사규 독립 운영, company_code 기반 검색·카드 분기</li>
+          <li>미답변 질문 감지 시스템 — 실시간 알림 및 관리자 대시보드 연동</li>
+          <li>멀티테넌트 문서 격리 — 3개 회사 사규 독립 운영</li>
         </ul>
         <div class="metrics">
           <div class="met"><div class="met-v">97.5%</div><div class="met-l">E2E 정확도 (72.5%→)</div></div>
