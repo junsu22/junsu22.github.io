@@ -60,6 +60,19 @@
 
     /* HERO */
     .hero { padding: 80px 0 0; }
+    .hero-inner {
+      display: flex; align-items: flex-start; gap: 48px; margin-bottom: 56px;
+    }
+    .hero-text { flex: 1; }
+    .hero-photo {
+      width: 180px; height: 230px; flex-shrink: 0;
+      border-radius: 14px; object-fit: cover; object-position: center 10%;
+      border: 1px solid var(--border);
+    }
+    @media (max-width: 620px) {
+      .hero-inner { flex-direction: column-reverse; gap: 24px; }
+      .hero-photo { width: 120px; height: 150px; }
+    }
     .hero-kicker {
       display: inline-block;
       font-size: 12px; font-weight: 700; letter-spacing: .12em;
@@ -75,7 +88,7 @@
       font-size: 15px; color: var(--sub);
       max-width: 560px; line-height: 1.8; margin-bottom: 28px;
     }
-    .hero-links { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 56px; }
+    .hero-links { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 5px;
       height: 36px; padding: 0 16px; border-radius: 8px;
@@ -301,18 +314,23 @@
 
   <!-- HERO -->
   <div class="hero">
-    <span class="hero-kicker">AI Engineer</span>
-    <h1>김준수</h1>
-    <p class="hero-role">아이디어를 실제 작동하는 프로덕션 AI로 만듭니다.</p>
-    <p class="hero-kw">RAG · 하이브리드 검색 · LLM 평가 시스템</p>
-    <p class="hero-bio">
-      6인 개발팀의 팀장으로 사내 문서 기반 RAG 서비스를 이끌었습니다.
-      AI 아키텍처를 단독 설계·구현해 E2E 정확도를 72.5%에서 97.5%로 끌어올렸고,
-      파이프라인 설계부터 배포·모니터링까지 AI 전 과정을 책임집니다.
-    </p>
-    <div class="hero-links">
-      <a href="https://github.com/junsu22" class="btn btn-solid" target="_blank">GitHub</a>
-      <a href="https://junsu22.github.io/withbuddy-showcase/withbuddy_ai_report.html" class="btn btn-outline" target="_blank">기술 리포트 →</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <span class="hero-kicker">AI Engineer</span>
+        <h1>김준수</h1>
+        <p class="hero-role">아이디어를 실제 작동하는 프로덕션 AI로 만듭니다.</p>
+        <p class="hero-kw">RAG · 하이브리드 검색 · LLM 평가 시스템</p>
+        <p class="hero-bio">
+          6인 개발팀의 팀장으로 사내 문서 기반 RAG 서비스를 이끌었습니다.
+          AI 아키텍처를 단독 설계·구현해 E2E 정확도를 72.5%에서 97.5%로 끌어올렸고,
+          파이프라인 설계부터 배포·모니터링까지 AI 전 과정을 책임집니다.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/junsu22" class="btn btn-solid" target="_blank">GitHub</a>
+          <a href="https://junsu22.github.io/withbuddy-showcase/withbuddy_ai_report.html" class="btn btn-outline" target="_blank">기술 리포트 →</a>
+        </div>
+      </div>
+      <img src="assets/jun22.jpg" alt="김준수" class="hero-photo">
     </div>
     <div class="stat-bar">
       <div class="stat">
